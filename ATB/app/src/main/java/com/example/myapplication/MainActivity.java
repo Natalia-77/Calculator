@@ -5,28 +5,18 @@ import org.mariuszgromada.math.mxparser.*;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-//import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
     private EditText display;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         display = findViewById(R.id.input);
-
         // уникнути програмного показу клавіатури знизу в фокусі
         display.setShowSoftInputOnFocus(false);
-
-//        display.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if(getString(R.string.display).equals(display.getText().toString())){
-//                    display.setText("");
-//                }
-//            }
-//        });
     }
 
     private void updateText(String strToAdd){
