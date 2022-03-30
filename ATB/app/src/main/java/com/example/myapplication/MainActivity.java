@@ -1,11 +1,11 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import org.mariuszgromada.math.mxparser.*;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
+//import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -121,6 +121,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void equalBtn(View view){
+    String exp=display.getText().toString();
+    exp=exp.replace("÷","/");
+    Expression expression=new Expression(exp);
+    String res = String.valueOf((expression.calculate()));
+    display.setText(res);
+    display.setSelection(res.length());
 
     }
 
